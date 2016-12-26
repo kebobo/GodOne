@@ -1,5 +1,6 @@
 package com.onegod.rmk.action;
 
+import com.onegod.rmk.model.User;
 import com.onegod.rmk.service.IUserService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.commons.logging.Log;
@@ -28,7 +29,8 @@ public class UserAction extends ActionSupport {
             Map<String, String> param = new HashMap<String, String>();
             param.put("username", username);
             param.put("password", password);
-            if(userService.getUserByMapSql(param) != null){
+            User user = userService.getUserByMapSql(param);
+            if(user != null){
                 message = "登录成功！";
                 logger.info(message);
                 return SUCCESS;

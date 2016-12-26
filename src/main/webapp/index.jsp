@@ -8,7 +8,7 @@
 <body>
 <h2>Hello World!</h2>
 <%-- 通过Struts传递参数,数据传递方式必须选择post,否则编码错误! --%>
-<form action="login.action" method="post" >
+<form action="user_login.action" method="post" >
     <p id="message">${message}</p>
     <b>Username:</b><input type="text" id="name" name="username" /><br>
     <b>Password:</b><input type="password" id="password" name="password"/><br>

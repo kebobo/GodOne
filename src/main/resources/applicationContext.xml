@@ -11,6 +11,10 @@
      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
      http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
 
+    <!--  ================================== import sub-config file  ================================== -->
+    <import resource="spring-mybatis.xml" />
+    <!--  ================================== /import sub-config file  ================================== -->
+
     <!-- UserDao 服务 -->
     <bean id="useDao" class="com.onegod.rmk.dao.impl.UserDaoImpl">
         <property name="readonlySQLSession" ref="readonlySQLSession"/>
@@ -24,8 +28,4 @@
     <bean id="userAction" class="com.onegod.rmk.action.UserAction">
         <property name="userService" ref="userService"/>
     </bean>
-
-    <!--  ================================== import sub-config file  ================================== -->
-    <import resource="spring-mybatis.xml" />
-    <!--  ================================== /import sub-config file  ================================== -->
 </beans>
